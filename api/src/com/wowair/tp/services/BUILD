@@ -1,0 +1,10 @@
+java_library(
+    name='services',
+    sources=globs('*.java'),
+    dependencies=[
+    	'tests/api/src/com/wowair/httpclient',
+        'tests/api/src/com/wowair/tp/model/offers:offers',
+        'tests/api/src/com/wowair/tp/model/reservation:reservation',
+        'tests/api/src/com/wowair/tp/model/bundles:bundles',
+    ]
+)

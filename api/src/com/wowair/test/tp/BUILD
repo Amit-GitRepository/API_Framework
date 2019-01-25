@@ -1,0 +1,47 @@
+target(
+    name='tp',
+    dependencies=[
+        ':tp-offers-test',
+        ':tp-reservation-test',
+        ':tp-bundles-test'
+    ]
+)
+
+junit_tests(
+    name='tp-offers-test',
+    sources=[
+        'OffersTest.java',
+    ],
+    dependencies=[
+        '3rdparty/jvm/com/fasterxml/jackson:jackson-databind',
+        'tests/api/src/com/wowair/tp/model/offers:offers',
+        'tests/api/src/com/wowair/tp/services:services',
+    ],
+    strict_deps=False,
+)
+
+junit_tests(
+    name='tp-reservation-test',
+    sources=[
+        'ReservationTest.java',
+    ],
+    dependencies=[
+        '3rdparty/jvm/com/fasterxml/jackson:jackson-databind',
+        'tests/api/src/com/wowair/tp/model/reservation:reservation',
+        'tests/api/src/com/wowair/tp/services:services',
+    ],
+    strict_deps=False,
+)
+
+junit_tests(
+    name='tp-bundles-test',
+    sources=[
+        'BundlesTest.java',
+    ],
+    dependencies=[
+        '3rdparty/jvm/com/fasterxml/jackson:jackson-databind',
+        'tests/api/src/com/wowair/tp/model/bundles:bundles',
+        'tests/api/src/com/wowair/tp/services:services',
+    ],
+    strict_deps=False,
+)
